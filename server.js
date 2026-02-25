@@ -63,3 +63,12 @@ app.delete("/enquiry/:id", async (req, res) => {
     res.status(500).json({ message: "Delete failed" });
   }
 });
+app.put("/enquiry/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Enquiry.findByIdAndUpdate(id, { status: "Contacted" });
+    res.json({ message: "Status updated" });
+  } catch (error) {
+    res.status(500).json({ message: "Update failed" });
+  }
+});
