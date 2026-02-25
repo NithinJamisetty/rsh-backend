@@ -4,10 +4,19 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NithinJamisetty/rsh-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NithinJamisetty/rsh-backend/issues"
+  },
+  "homepage": "https://github.com/NithinJamisetty/rsh-backend#readme"
 }
