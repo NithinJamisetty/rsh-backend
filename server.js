@@ -49,3 +49,13 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
 });
+
+app.delete("/enquiry/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Enquiry.findByIdAndDelete(id);
+    res.json({ message: "Enquiry deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Delete failed" });
+  }
+});
