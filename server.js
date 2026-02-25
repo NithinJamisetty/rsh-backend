@@ -34,6 +34,17 @@ app.get("/", (req, res) => {
   res.send("RSH Enquiry API Running");
 });
 
+
+app.get("/enquiries", async (req, res) => {
+  try {
+    const enquiries = await Enquiry.find().sort({ createdAt: -1 });
+    res.json(enquiries);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error fetching enquiries" });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
