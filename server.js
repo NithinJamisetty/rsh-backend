@@ -15,6 +15,10 @@ const enquirySchema = new mongoose.Schema({
   email: String,
   phone: String,
   message: String,
+  status: {
+    type: String,
+    default: "Pending"
+  },
   createdAt: { type: Date, default: Date.now }
 });
 
